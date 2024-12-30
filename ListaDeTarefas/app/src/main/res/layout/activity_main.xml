@@ -8,38 +8,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+  <androidx.recyclerview.widget.RecyclerView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:id="@+id/todoListRecyclerView"
+      android:backgroundTint="@color/design_default_color_background"
+      />
 
-
-    <TextView
-        android:id="@+id/taskName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nome da tarefa: "
-        style="@style/TextAppearance.AppCompat.Title"
-        android:layout_margin="20dp"
-        android:layout_gravity="center"
-        />
-
-        <TextView
-            android:id="@+id/taskDesc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Descrição da tarefa: "
-            style="@style/TextAppearance.AppCompat.Title"
-            android:layout_margin="20dp"
-            android:layout_gravity="center"
-            />
-
-    </LinearLayout>
-    
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nova Tarefa"
+        android:text="@string/nova_tarefa"
         android:id="@+id/newTaskButton"
         android:backgroundTint="?attr/colorPrimary"
         android:textColor="?colorOnPrimary"

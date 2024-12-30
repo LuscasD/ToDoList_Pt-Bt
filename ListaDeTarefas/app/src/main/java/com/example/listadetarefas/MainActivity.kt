@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.listadetarefas.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity()
@@ -22,14 +23,21 @@ class MainActivity : AppCompatActivity()
         setContentView(binding.root)
         taskViewModel = ViewModelProvider(this).get(TaskViewModel::class.java)
         binding.newTaskButton.setOnClickListener{
-            NewTaskSheet().show(supportFragmentManager, "newTaskTag")
+            NewTaskSheet(null).show(supportFragmentManager, "newTaskTag")
         }
 
-        taskViewModel.name.observe(this){
-            binding.taskName.text = String.format("Nome da tarefa: %s", it)
-        }
-        taskViewModel.name.observe(this){
-            binding.taskDesc.text = String.format("Descrição da tarefa: %s", it)
+        setRecyclerView()
+
+    }
+
+    private fun setRecyclerView()
+    {
+        val mainActivity = this
+        taskViewModel.taskItems.observe(this){
+            binding.todoListRecyclerView.apply {
+                layoutManager = LinearLayoutManager(applicationContext)
+                adapter = TaskItemAdapter(it)
+            }
         }
 
     }
