@@ -44,8 +44,7 @@
             android:id="@+id/dueTime"
             android:text="@string/place_holder"
             style="@style/TextAppearance.AppCompat.Title"
-            android:layout_gravity="center"
-          />
+            android:layout_gravity="center" />
 
 
 

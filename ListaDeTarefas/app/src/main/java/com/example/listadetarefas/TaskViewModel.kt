@@ -28,7 +28,7 @@ class TaskViewModel: ViewModel()
         val task = list!!.find { it.id == id }!!
         task.name = name
         task.desc = desc
-        task.dueTime = dueTime
+        task.dueTime = dueTime  // Certifique-se de que este valor é passado corretamente
         taskItems.postValue(list)
 
     }

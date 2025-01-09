@@ -28,9 +28,9 @@ class NewTaskSheet(var taskItem: TaskItem?) : BottomSheetDialogFragment() {
             val editable = Editable.Factory.getInstance()
             binding.name.text = editable.newEditable(taskItem!!.name)
             binding.desc.text = editable.newEditable(taskItem!!.desc)
-            if(taskItem!!.dueTime != null){
+            if (taskItem!!.dueTime != null) {
                 dueTime = taskItem!!.dueTime!!
-                updateTimeButtonText()
+                updateTimeButtonText()  // Aqui você já atualiza o botão com o horário.
             }
         }
         else
