@@ -3,6 +3,7 @@ package com.example.listadetarefas
 import android.content.Context
 import android.graphics.Paint
 import androidx.recyclerview.widget.RecyclerView
+import com.example.listadetarefas.databinding.FragmentNewTaskSheetBinding
 import com.example.listadetarefas.databinding.TaskItemCellBinding
 import java.time.format.DateTimeFormatter
 
@@ -24,7 +25,7 @@ class TaskItemViewHolder(
         }
 
         binding.completeButton.setImageResource(taskItem.imageResource())
-        binding.completeButton.setColorFilter(taskItem.imageColor(context))
+        binding.completeButton.setColorFilter(taskItem.ImageColor(context))
 
         binding.completeButton.setOnClickListener{
             clickListener.completTaskItem(taskItem)

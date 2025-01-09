@@ -3,6 +3,7 @@ package com.example.listadetarefas
 import android.app.TimePickerDialog
 import android.os.Bundle
 import android.text.Editable
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -59,7 +60,7 @@ class NewTaskSheet(var taskItem: TaskItem?) : BottomSheetDialogFragment() {
     }
 
     private fun updateTimeButtonText() {
-        binding.timePickerButton.text = toString().format("%02d:%02d", dueTime!!.hour, dueTime!!.minute)
+        binding.timePickerButton.text = String.format("%02d:%02d",dueTime!!.hour,dueTime!!.minute)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
